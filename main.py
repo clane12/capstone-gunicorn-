@@ -119,7 +119,7 @@ class BlogPost(db.Model):
     date: Mapped[str] = mapped_column(String(250), nullable=False)
     body: Mapped[str] = mapped_column(Text, nullable=False)
 
-    author_id: Mapped[int] = mapped_column(String, db.ForeignKey("user.id"))
+    author_id: Mapped[int] = mapped_column(Integer, db.ForeignKey("user.id"))
     author = relationship("User", back_populates='posts')
     img_url: Mapped[str] = mapped_column(String(250), nullable=False)
 
@@ -148,7 +148,7 @@ class User_comments(db.Model):
     comment_author = relationship('User', back_populates='comment')
 
     parent_post = relationship("BlogPost", back_populates="comments")
-    post_id: Mapped[str] = mapped_column(Integer, db.ForeignKey("blog_posts.id"))
+    post_id: Mapped[int] = mapped_column(Integer, db.ForeignKey("blog_posts.id"))
 
 with app.app_context():
     db.create_all()
