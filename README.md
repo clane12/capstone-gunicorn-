@@ -1,4 +1,5 @@
 Flask Blog CMS
+
 A full-featured Blog Content Management System built using Flask, SQLAlchemy, Flask-WTF, and Flask-Login. Users can register, log in, comment on posts, and the admin user (first to register) can create, edit, and delete blog posts.
 
 ✨ Features
